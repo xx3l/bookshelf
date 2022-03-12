@@ -1,0 +1,40 @@
+Базовый функционал:
+
+- "Upload" литературы.
+$db->book->add($book_content : string, $info : array)
+
+- Скачивание книги, желательно, чтение прямо в системе.
+$db->book->get($id) : string
+
+- Ведение тэгов
+$db->tag->add($tags : array)
+$db->tag->remove($tags : array)
+$db->tag->list($params)
+
+- Оценка книги:
+  - категорирование (дерево тегов)
+$db->book->tag->add($tags : array)
+$db->book->tag->remove($tags : array)
+
+  - шкалы оценок
+$db->book->rate($scale, $rate)
+$db->rates->add($scale)
+$db->rates->list()
+$db->rates->remove($scale)
+
+- Отслеживание неоцененных книг.
+*** использовать поиск по специальным параметрам
+
+- Формирование списка книг по критериям поиска.
+$db->book->search($params : array) : int
+
+- "Мой список для чтения".
+*** использовать поиск по специальным параметрам
+
+TODO: Методы для scales
+
+
+
+
+*Примечания
+- Без доработок должна быть возможность разместить на хостинге (максимум - правка в конфиге)
