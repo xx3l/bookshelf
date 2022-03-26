@@ -3,6 +3,9 @@
 - "Upload" литературы.
 $db->book->add($book_content : string, $info : array)
 
+
+foreach($db->books->search(["author" => "Толстой"]) as $book)
+$db->books->search(["author" => "Толстой"])->
 - Скачивание книги, желательно, чтение прямо в системе.
 $db->book->get($id) : string
 
