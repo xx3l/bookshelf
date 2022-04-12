@@ -9,20 +9,17 @@ class BookShelfApp {
   }
 
   public function run() : void {
-    print $this->db->books->print();
-    $this->db->books->search(["name"=>"о"])->remove();
-    print_r($this->db->books->ids);
-    print $this->db->books->print();
-//    print $this->db->tags->print();
     $this->dispatch();
     $this->render();
   }
 
   public function dispatch() : void {
-    print "dispatch";
+//    print "dispatch";
   }
 
   public function render() : void {
-    print "render";
+    require "render_template.php";
+    $data = ["app_name" => "BookShelf", "year" => date("Y")];
+    Render::draw("index", $data);
   }
 }
